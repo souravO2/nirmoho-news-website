@@ -1,0 +1,32 @@
+import type { Metadata } from "next";
+import { Noto_Serif_Bengali } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/homepage/BackToTop";
+
+const notoSerifBengali = Noto_Serif_Bengali({
+  subsets: ["latin", "bengali"],
+});
+
+export const metadata: Metadata = {
+  title: "Nirmoho",
+  description: "News Website",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      data-theme="light"
+      className={`${notoSerifBengali.className} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {children}
+        <BackToTop />
+        <Footer />
+      </body>
+    </html>
+  );
+}
