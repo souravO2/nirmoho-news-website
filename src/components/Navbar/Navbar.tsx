@@ -6,6 +6,7 @@ import Marquee from "./Marquee";
 
 const Navbar = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
+    timeZone: "Asia/Dhaka",
     dateStyle: "full",
   });
 
