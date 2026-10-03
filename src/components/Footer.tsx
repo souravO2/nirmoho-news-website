@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <Link
               href="/"
-              className="text-2xl font-bold tracking-tight text-white"
+              className="flex justify-center text-2xl font-bold tracking-tight text-white"
             >
               <Image
                 src="/nirmoho-white.png"
