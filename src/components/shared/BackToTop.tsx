@@ -30,7 +30,7 @@ const BackToTop = () => {
       {show && (
         <button
           onClick={handleBackToTop}
-          className="btn fixed right-15 bottom-15 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-700 text-white shadow-lg transition hover:bg-red-800"
+          className="btn fixed right-2 bottom-2 sm:right-10 sm:bottom-10 md:right-15 md:bottom-15 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-red-700 text-white shadow-lg transition hover:bg-red-800"
           aria-label="Back to top"
         >
           <FaArrowUp size={22} />
