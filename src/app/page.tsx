@@ -1,13 +1,25 @@
-import Card from "@/components/homepage/Card";
-import MainNews from "@/components/MainNews";
+import Card from "@/components/shared/Card";
+import MostRead from "@/components/homepage/MostRead";
+import MainNews from "@/components/homepage/MainNews";
 import { WholeSectionType } from "@/types/WholeSectionType";
+import { NewsProp } from "@/types/NewsProp";
+
+const DataPromise = async () => {
+  try {
+    const res = await fetch("https://news-api-v2.vercel.app/api/news/sections");
+    return res.json();
+  } catch (error) {
+    console.log("Error", error);
+  }
+};
 
 export default async function Home() {
-  const res = await fetch("https://news-api-v2.vercel.app/api/news/sections");
-  const fetchedData = await res.json();
+  const fetchedData = await DataPromise();
   const sections = fetchedData.data;
-  const [mainNews, ...otherSections] = sections;
-  // const mainNews = sections[0].articles;
+  const mainNews = sections[0];
+  const otherSections = fetchedData.data.filter(
+    (_: NewsProp, index: number) => ![0, 2, 4, 10].includes(index),
+  );
 
   return (
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3">
@@ -25,7 +37,9 @@ export default async function Home() {
           </div>
         ))}
       </div>
-      <div className="col-span-1 bg-red-200"></div>
+      <div className="col-span-1">
+        <MostRead />
+      </div>
     </div>
   );
 }
