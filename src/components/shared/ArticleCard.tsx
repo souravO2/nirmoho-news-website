@@ -70,7 +70,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
   return (
     <article className="mx-auto max-w-5xl">
       {/* Hero Image */}
-      <div className="relative aspect-video overflow-hidden rounded-2xl">
+      {/* <div className="relative aspect-video overflow-hidden rounded-2xl">
         <Image
           src={article.imageUrl}
           alt={article.title}
@@ -79,7 +79,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 1024px"
         />
-      </div>
+      </div> */}
 
       {/* Article Content */}
       <div className="mt-8">
@@ -106,7 +106,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
         </p>
 
         {/* Meta */}
-        <div className="mt-6 flex flex-wrap items-center gap-3 border-b border-gray-200 pb-6 text-sm text-gray-500">
+        <div className="mt-6 flex flex-wrap items-center gap-3 border-y border-gray-200 py-4 text-sm text-gray-500">
           <span className="font-semibold text-gray-900">
             {article.byline[0]?.name}
           </span>
