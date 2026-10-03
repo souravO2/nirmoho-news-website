@@ -6,7 +6,7 @@ import React from "react";
 const Card = ({ data }: { data: NewsProp }) => {
   return (
     <Link href={`/article/${data.id}`}>
-      <div className="card bg-base-100 hover:border-red-200 border border-slate-200 w-full shadow-sm cursor-pointer">
+      <div className="card group bg-base-100 hover:border-red-200 border border-slate-200 w-full shadow-sm cursor-pointer">
         <figure>
           <Image
             src={data.imageUrl}
@@ -20,7 +20,7 @@ const Card = ({ data }: { data: NewsProp }) => {
         <div className="card-body">
           <p className="text-red-700 text-lg">{data.category}</p>
 
-          <h2 className="card-title text-xl font-bold hover:text-red-700">
+          <h2 className="card-title text-xl font-bold group-hover:text-red-700">
             {data.title}
           </h2>
 
