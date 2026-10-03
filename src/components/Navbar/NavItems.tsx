@@ -10,7 +10,7 @@ const NavItems = ({ data }: { data: ArticleType[] }) => {
   return (
     <>
       <Link
-        className={`link no-underline text-black rounded-xl px-2 py-1 ${
+        className={`hidden sm:block link no-underline text-black rounded-xl px-2 py-1 ${
           pathname === "/" ? "bg-red-700/10 text-red-700" : ""
         }`}
         href="/"
