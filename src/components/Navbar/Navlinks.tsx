@@ -3,7 +3,11 @@ import { ArticleType } from "@/types/ArticleType";
 
 const DataPromise = async () => {
   try {
-    const res = await fetch("https://news-api-v2.vercel.app/api/categories");
+    const res = await fetch("https://news-api-v2.vercel.app/api/categories", {
+      next: {
+        revalidate: 3600,
+      },
+    });
     return res.json();
   } catch (error) {
     console.log("Error", error);

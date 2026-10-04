@@ -5,7 +5,14 @@ import "react-marquee-text/dist/styles.css";
 
 const DataPromise = async () => {
   try {
-    const res = await fetch("https://news-api-v2.vercel.app/api/news?limit=10");
+    const res = await fetch(
+      "https://news-api-v2.vercel.app/api/news?limit=10",
+      {
+        next: {
+          revalidate: 3600,
+        },
+      },
+    );
     return res.json();
   } catch (error) {
     console.log("Error", error);

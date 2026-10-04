@@ -10,6 +10,11 @@ const CategoryPage = async ({
   const { categoryId } = await params;
   const res = await fetch(
     `https://news-api-v2.vercel.app/api/category/${categoryId}`,
+    {
+      next: {
+        revalidate: 3600,
+      },
+    },
   );
   const fetchedData = await res.json();
   const data: NewsProp[] = fetchedData.data;

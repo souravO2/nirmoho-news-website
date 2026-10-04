@@ -6,7 +6,12 @@ import { NewsProp } from "@/types/NewsProp";
 
 const DataPromise = async () => {
   try {
-    const res = await fetch("https://news-api-v2.vercel.app/api/news/sections");
+    const res = await fetch(
+      "https://news-api-v2.vercel.app/api/news/sections",
+      {
+        next: { revalidate: 3600 },
+      },
+    );
     return res.json();
   } catch (error) {
     console.log("Error", error);

@@ -10,6 +10,11 @@ const ArticlePage = async ({
 
   const res = await fetch(
     `https://news-api-v2.vercel.app/api/article/${articleId}`,
+    {
+      next: {
+        revalidate: 3600,
+      },
+    },
   );
   const fetchedData = await res.json();
   const data = fetchedData.data;

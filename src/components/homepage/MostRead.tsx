@@ -6,6 +6,11 @@ const DataPromise = async () => {
   try {
     const res = await fetch(
       "https://news-api-v2.vercel.app/api/news/most-read",
+      {
+        next: {
+          revalidate: 3600,
+        },
+      },
     );
     return res.json();
   } catch (error) {
