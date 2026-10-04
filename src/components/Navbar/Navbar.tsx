@@ -4,6 +4,7 @@ import Navlinks from "./Navlinks";
 import Time from "./Time";
 import Marquee from "./Marquee";
 import DateDisplay from "./DateDisplay";
+import LogInButtons from "./LogInButtons";
 
 const Navbar = () => {
   return (
@@ -37,24 +38,7 @@ const Navbar = () => {
         </Link>
 
         {/* Buttons */}
-        <div
-          className="
-      flex justify-center gap-2 mt-2 pb-3
-      md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2
-      md:mt-0 md:pb-0
-    "
-        >
-          <Link
-            href=""
-            className="btn rounded-lg border-none hover:text-red-700"
-          >
-            সাইন ইন
-          </Link>
-
-          <Link href="" className="btn rounded-lg bg-red-700 text-white">
-            সাইন আপ
-          </Link>
-        </div>
+        <LogInButtons />
       </div>
 
       <Navlinks />

@@ -21,7 +21,7 @@ const DataPromise = async () => {
 const MostRead = async () => {
   const fetchedData = await DataPromise();
   const data: NewsProp[] = fetchedData.data;
-  console.log(data);
+  // console.log(data);
   return (
     <div className="m-4 p-4 border border-slate-200 rounded-xl">
       <h1 className="font-semibold text-xl p-4">সর্বাধিক পঠিত</h1>
