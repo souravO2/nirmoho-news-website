@@ -27,12 +27,12 @@ const Marquee = async () => {
       <div className="container mx-auto flex items-center">
         <h1 className="bg-red-800 p-2 font-semibold">সর্বশেষ</h1>
         <MarqueeText
-          className="p-y-1"
+          className="py-1"
           direction="right"
           pauseOnHover
           duration={10}
         >
-          {data.map((item, id) => (
+          {[...data, ...data].map((item, id) => (
             <span key={id}>
               <a href={`/article/${item.id}`} className="hover:underline">
                 {item.title}
