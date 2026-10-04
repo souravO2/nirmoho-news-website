@@ -11,7 +11,7 @@ const MainNews = ({ mainNews }: { mainNews: NewsProp[] }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-4">
       {/* Main News */}
-      <div className="card group bg-base-100 border border-slate-200 hover:border-red-200 w-full shadow-sm cursor-pointer">
+      <div className="card group bg-base-100 border border-slate-200 hover:border-red-200 w-full shadow-sm cursor-pointer overflow-hidden">
         <Link href={`/article/${firstNews.id}`}>
           <figure>
             <Image
@@ -36,8 +36,8 @@ const MainNews = ({ mainNews }: { mainNews: NewsProp[] }) => {
       </div>
 
       {/* Other News */}
-      <div className="flex flex-col space-y-4 border p-4 rounded-xl border-slate-300">
-        {otherNews.slice(0, 5).map((item, id) => (
+      <div className="flex flex-col space-y-4 border p-4 rounded-xl border-slate-300 max-h-125 overflow-y-auto">
+        {otherNews.map((item, id) => (
           <Link
             key={id}
             href={`/article/${item.id}`}
