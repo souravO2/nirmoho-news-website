@@ -3,13 +3,9 @@ import Link from "next/link";
 import Navlinks from "./Navlinks";
 import Time from "./Time";
 import Marquee from "./Marquee";
+import DateDisplay from "./DateDisplay";
 
 const Navbar = () => {
-  const date = new Date().toLocaleDateString("bn-BD", {
-    timeZone: "Asia/Dhaka",
-    dateStyle: "full",
-  });
-
   return (
     <div className="bg-white">
       <div className="container mx-auto relative">
@@ -36,7 +32,7 @@ const Navbar = () => {
               সত্যের পাশে, পক্ষপাতের বাইরে
             </h1>
 
-            <h2 className="text-slate-600">{date}</h2>
+            <DateDisplay />
           </div>
         </Link>
 

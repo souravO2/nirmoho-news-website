@@ -26,14 +26,12 @@ const Marquee = async () => {
           duration={10}
         >
           {data.map((item, id) => (
-            <a
-              key={id}
-              href={`/article/${item.id}`}
-              className="hover:underline"
-            >
-              <span>{item.title}</span>
+            <span key={id}>
+              <a href={`/article/${item.id}`} className="hover:underline">
+                {item.title}
+              </a>
               <span className="mx-4">•</span>
-            </a>
+            </span>
           ))}
         </MarqueeText>
       </div>
