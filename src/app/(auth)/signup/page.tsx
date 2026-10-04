@@ -1,9 +1,11 @@
 "use client";
 
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
+import { FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { toast } from "sonner";
 
 const SignUpPage = () => {
@@ -27,6 +29,18 @@ const SignUpPage = () => {
     }
   };
 
+  const handleGoogleBtn = async () => {
+    const res = await signIn.social({
+      provider: "google",
+    });
+    return res;
+  };
+  const handleGitHubBtn = async () => {
+    const res = await signIn.social({
+      provider: "github",
+    });
+    return res;
+  };
   return (
     <div className="flex flex-col justify-center items-center text-center m-4">
       <h1 className="text-2xl text-red-700 font-extrabold text-center">
@@ -74,6 +88,16 @@ const SignUpPage = () => {
           </Link>
         </p>
       </form>
+      <span>-------OR-------</span>
+      <div className="flex flex-col gap-y-2">
+        <button onClick={handleGoogleBtn} className="btn text-center">
+          <FcGoogle /> Google
+        </button>
+        <button onClick={handleGitHubBtn} className="btn text-center">
+          <FaGithub />
+          GitHub
+        </button>
+      </div>
     </div>
   );
 };

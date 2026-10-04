@@ -3,6 +3,7 @@
 import { signOut, useSession } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
+import { RxAvatar } from "react-icons/rx";
 
 const LogInButtons = () => {
   const { data: session, isPending } = useSession();
@@ -23,15 +24,23 @@ const LogInButtons = () => {
     "
     >
       {session?.user ? (
-        <span className="text-center">
-          <span>Welcome, {session.user.name}</span>
+        <div className="text-center flex items-center gap-2">
+          <div>
+            <Link
+              href={"/profile"}
+              className="flex flex-col justify-center items-center"
+            >
+              <RxAvatar className="w-8 h-8" />
+              <span>{session.user.name}</span>
+            </Link>
+          </div>
           <button
             onClick={() => signOut()}
             className="btn rounded-lg bg-red-700 text-white"
           >
-            Sign Out
+            সাইন আউট
           </button>
-        </span>
+        </div>
       ) : (
         <>
           <Link
