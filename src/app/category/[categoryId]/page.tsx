@@ -1,5 +1,6 @@
 import Card from "@/components/shared/Card";
 import { NewsProp } from "@/types/NewsProp";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const CategoryPage = async ({
@@ -18,7 +19,10 @@ const CategoryPage = async ({
   );
   const fetchedData = await res.json();
   const data: NewsProp[] = fetchedData.data;
-  console.log(data);
+  // console.log(data);
+  if (!data) {
+    notFound();
+  }
   return (
     <div className="container mx-auto p-4">
       <div className="my-4 flex flex-col">

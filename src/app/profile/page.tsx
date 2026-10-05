@@ -2,7 +2,6 @@
 
 import { useSession } from "@/lib/auth-client";
 import { updateUser } from "@/lib/auth-client";
-import Link from "next/link";
 import React, { useState } from "react";
 
 const ProfilePage = () => {
@@ -29,18 +28,7 @@ const ProfilePage = () => {
       </div>
     );
   }
-  if (!session?.user) {
-    return (
-      <div className="container mx-auto flex justify-center m-4">
-        {" "}
-        <Link href={"/signin"}>
-          <button className="btn bg-red-700 text-white">
-            Please sign in to view your profile
-          </button>
-        </Link>{" "}
-      </div>
-    );
-  }
+
   return (
     <div className="container mx-auto flex flex-col justify-center m-4">
       <div className="flex justify-center">

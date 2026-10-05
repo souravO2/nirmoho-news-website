@@ -1,7 +1,6 @@
 "use client";
 
 import { signIn } from "@/lib/auth-client";
-import { google } from "better-auth";
 import Link from "next/link";
 import React from "react";
 import { FaGithub } from "react-icons/fa";

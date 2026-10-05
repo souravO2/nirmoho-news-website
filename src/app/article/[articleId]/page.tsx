@@ -1,4 +1,5 @@
 import ArticleCard from "@/components/shared/ArticleCard";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const ArticlePage = async ({
@@ -18,7 +19,11 @@ const ArticlePage = async ({
   );
   const fetchedData = await res.json();
   const data = fetchedData.data;
-  console.log(data);
+  // console.log(data);
+
+  if (!data) {
+    notFound();
+  }
   return (
     <div className="my-4 mx-2">
       <ArticleCard article={data} />
