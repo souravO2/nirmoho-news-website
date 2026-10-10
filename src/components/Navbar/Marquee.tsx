@@ -1,4 +1,5 @@
 import { MarqueeProp } from "@/types/MarqueeProp";
+import Link from "next/link";
 import React from "react";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
@@ -34,9 +35,9 @@ const Marquee = async () => {
         >
           {[...data, ...data].map((item, id) => (
             <span key={id}>
-              <a href={`/article/${item.id}`} className="hover:underline">
+              <Link href={`/article/${item.id}`} className="hover:underline">
                 {item.title}
-              </a>
+              </Link>
               <span className="mx-4">•</span>
             </span>
           ))}
